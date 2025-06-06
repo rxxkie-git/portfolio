@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Srinand's portfolio - A creative 19-year-old passionate about coding, and AI/ML ptojects. Explore my projects and get in touch!">
+    <meta name="keywords" content="Srinand, portfolio, coding, creative, projects">
+    <meta name="author" content="Srinand">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Srinand">
+    <meta property="og:description" content="Creative portfolio showcasing coding and AI/ML projects by a passionate 19-year-old creator">
+    <meta property="og:image" content="https://api.lanyard.rest/758602811578646548.png">
+    <meta property="og:image:alt" content="https://api.lanyard.rest/758602811578646548.png">
+    <meta property="og:url" content="https://lakshyau.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <meta property="discord:card" content="summary_large_image">
+    <meta property="discord:title" content="Srinand's Website">
+    <meta property="discord:description" content="Creative portfolio showcasing coding, and AI/ML projects">
+    <meta property="discord:image" content="https://api.lanyard.rest/v1/users/758602811578646548">
+    <meta property="discord:image:alt" content="Srinand's Profile Picture">
+    
+    <meta name="theme-color" content="#ff7e5f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Srinand's Portfolio | Enigneer • Coder • Developer</title>
+
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="bg_video2.mp4" as="video">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="icon" href="https://api.lanyard.rest/1214142384544161793.png" type="image/x-icon">
+
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="#about" aria-current="page">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <video autoplay muted loop id="background-video" playsinline poster="video-poster.jpg">
+        <source src="K..mp4" type="video/mp4">
+        <p>Your browser does not support the video tag. Consider upgrading your browser.</p>
+    </video>
+
+    <button class="mute-btn" id="mute-btn" aria-label="Mute or Unmute Video">
+        <i class="fas fa-volume-mute" aria-hidden="true"></i>
+    </button>
+
+    <main>
+        <section id="about" class="content" data-aos="zoom-in">
+            <img src="https://api.lanyard.rest/758602811578646548.png" alt="Profile picture of Srinand" class="profile-pic" loading="lazy" width="200" height="200">
+            <h1 class="animated-title">Srinand</h1>
+            <p class="animated-paragraph">19-year-old who loves coding, learning about AI. Just figuring it all out and enjoying the process.</p>
+    
+            <div class="view-count" data-aos="fade-up">
+                <span id="view-count">0</span> views
+            </div>
+            
+            <div id="corner-clock" style="color: transparent; background: linear-gradient(45deg, #ff7e5f, #feb47b); -webkit-background-clip: text; padding: 10px 15px;" data-aos="flip-left">
+                <span id="corner-hours" style="font-weight: bold; font-size: 2rem;">00</span>: 
+                <span id="corner-minutes" style="font-weight: bold; font-size: 2rem;">00</span>: 
+                <span id="corner-seconds" style="font-weight: bold; font-size: 2rem;">00</span>
+                <span id="corner-ampm" style="font-weight: 600; font-size: 1.5rem;">AM</span>
+            </div>
+
+            <div class="discord-status" aria-live="polite">
+                <div class="discord-avatar-container">
+                    <img id="discord-avatar" src="default-avatar.png" alt="Discord Avatar" width="50" height="50">
+                    <div id="discord-status-badge" class="status-badge">Offline</div>
+                </div>
+                <div class="discord-info">
+                    <h3 id="discord-username">Loading...</h3>
+                    <p id="discord-status">Fetching status...</p>
+                    <div id="discord-badges" class="badges-container"></div>
+                </div>
+            </div>
+    
+            <div class="social-icons" data-aos="fade-up">
+                <a href="https://open.spotify.com/user/31q6xxnnek5rrs3vvcck5jwc2ube" class="spotify" target="_blank" rel="noopener noreferrer" aria-label="Spotify Profile">
+                    <i class="fab fa-spotify" aria-hidden="true"></i>
+                </a>
+                <a href=" https://discord.gg/Nx2PkGhc" class="discord" target="_blank" rel="noopener noreferrer" aria-label="Discord Invite">
+                    <i class="fab fa-discord" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/rxxkie_ig/" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    
+        <section id="projects" class="projects">
+            <h2 data-aos="fade-up">My Projects</h2>
+            <div class="project-gallery">
+                <div class="project-card" data-aos="flip-left">
+                    <img src="https://i.ibb.co/cQLLcph/Street-Art-Posters-Artistic-tapestry-prints-Wall-Art-Collection-Artistic-wall-posters-Pop-Culture-A.jpg" alt="Editing project thumbnail showing video effects" loading="lazy" width="300" height="200">
+                    <div class="project-overlay">
+                        <h3>Coding Project (Python)</h3>
+                        <p>A ML tool predicting the year an animal might become endangered based on current data trends(with graphs).</p>
+                        <a href="https://github.com/rxxkie-git/biomltool.git" target="_blank" rel="noopener noreferrer" class="project-btn">Watch</a>
+                    </div>
+                </div>
+        
+                <div class="project-card" data-aos="flip-right">
+                    <img src="https://i.pinimg.com/736x/43/29/22/43292224545d70d9b0e72785599364c7.jpg" alt="Coding project thumbnail showing website interface" loading="lazy" width="300" height="200">
+                    <div class="project-overlay">
+                        <h3>Coding Project (CPP)</h3>
+                        <p>A basic music recommendation system that suggests songs using set preferences and rules.</p>
+                        <a href="https://jmp.sh/FHQcB7l9" target="_blank" rel="noopener noreferrer" class="project-btn">View Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="footer" data-aos="fade-up">
+            <p>© 2025 <strong>roxkie</strong> | Made with <span aria-hidden="true">❤️</span><span class="sr-only">love</span></p>
+            
+            <nav class="footer-links" aria-label="Footer Navigation">
+                <a href="https://github.com/rxxkie-git" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="footer-link github" 
+                    aria-label="Visit GitHub Profile">
+                    <i class="fab fa-github" aria-hidden="true"></i> <span>GitHub</span>
+                </a>
+
+                <a href="https://leetcode.com/u/srinandleetc/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="footer-link chess" 
+                   aria-label="Visit Leetcode Profile">
+                    <i class="fas fa-chess-knight" aria-hidden="true"></i> <span>Chess.com</span>
+                </a>
+
+                <a href="mailto:srinandrv@gmail.com" 
+                    class="footer-link email" 
+                    aria-label="Send an Email">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact</span>
+                </a>
+            </nav>
+        </footer>
+    </main>
+
+    <button id="scroll-to-top" aria-label="Scroll to Top" class="scroll-btn">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script>
+        window.addEventListener('load', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html>
