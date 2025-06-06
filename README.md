@@ -4,7 +4,7 @@ Welcome to my **personal portfolio!** 🎨 This website showcases my **skills, p
 
 ## 🌍 Live Demo  
 
-🔗 **Check out the live version of my portfolio:** [srinand.vercel.app](https://portfolio-ecru-psi-98.vercel.app)  
+🔗 **Check out the live version of my portfolio:** [srinand.vercel.app](https://rxokie.vercel.app)  
 
 ## ✨ Features  
 
