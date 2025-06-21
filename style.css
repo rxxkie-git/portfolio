@@ -1158,46 +1158,5 @@ body {
     padding: 2px 6px;
     font-size: 0.7rem;
   }
-  /* Scroll Progress Circle */
-.read-indicator {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #111;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 12px;
-  z-index: 9999;
-}
-.read-indicator svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotate(-90deg);
-}
-.read-indicator circle {
-  fill: none;
-  stroke-width: 4;
-}
-.read-indicator .bg {
-  stroke: #444;
-}
-.read-indicator .progress {
-  stroke: white;
-  stroke-dasharray: 157;
-  stroke-dashoffset: 157;
-  transition: stroke-dashoffset 0.1s linear;
-}
-.read-indicator .read-text {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  line-height: 1.2;
-}
 }
 
