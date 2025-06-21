@@ -189,28 +189,5 @@
   </svg>
   <div class="read-text">1 min<br>read</div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const progressCircle = document.querySelector('.read-indicator .progress');
-    const radius = progressCircle.r.baseVal.value;
-    const circumference = 2 * Math.PI * radius;
-
-    progressCircle.style.strokeDasharray = `${circumference}`;
-    progressCircle.style.strokeDashoffset = `${circumference}`;
-
-    function updateScrollProgress() {
-      const scrollTop = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / scrollHeight) * 100;
-      const offset = circumference - (scrollPercent / 100) * circumference;
-      progressCircle.style.strokeDashoffset = offset;
-    }
-
-    window.addEventListener('scroll', updateScrollProgress);
-    updateScrollProgress();
-  });
-</script>
-
 </body>
 </html>
