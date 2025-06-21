@@ -172,5 +172,35 @@
             });
         });
     </script>
+    <!-- Scroll Progress Indicator -->
+<div class="read-indicator" aria-hidden="true">
+  <svg width="60" height="60">
+    <circle class="bg" cx="30" cy="30" r="25"></circle>
+    <circle class="progress" cx="30" cy="30" r="25"></circle>
+  </svg>
+  <div class="read-text">1 min<br>read</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const progressCircle = document.querySelector('.read-indicator .progress');
+    if (!progressCircle) return;
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    progressCircle.style.strokeDasharray = circumference;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (docHeight > 0) ? (scrollTop / docHeight) * 100 : 0;
+      const offset = circumference - (scrollPercent / 100) * circumference;
+      progressCircle.style.strokeDashoffset = offset;
+    }
+
+    window.addEventListener('scroll', updateScrollProgress);
+    updateScrollProgress();
+  });
+</script>
 </body>
 </html>
