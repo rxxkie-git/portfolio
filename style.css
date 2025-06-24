@@ -59,11 +59,13 @@ body {
 
 .navbar:hover {
   transform: translateX(-50%) translateY(-4px);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6),
-              0 6px 30px rgba(255, 255, 255, 0.12),
-              inset 0 0 60px rgba(255, 255, 255, 0.04);
-  background: rgba(18, 18, 18, 0.95);
+  box-shadow: 
+    0 15px 50px rgba(0, 100, 255, 0.4),          /* bluish outer glow */
+    0 6px 30px rgba(173, 216, 230, 0.25),        /* soft light blue highlight */
+    inset 0 0 60px rgba(173, 216, 230, 0.08);    /* light blue inner glow */
+  background: rgba(173, 216, 230, 0.15);         /* translucent light blue background */
 }
+
 
 .navbar ul {
   display: flex;
