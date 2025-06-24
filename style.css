@@ -79,7 +79,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(173, 216, 230, 0.9);
   padding: clamp(12px, 1.5vw, 16px) clamp(20px, 2.5vw, 32px); 
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
