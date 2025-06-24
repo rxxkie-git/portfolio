@@ -126,7 +126,7 @@ body {
 .navbar a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-  box-shadow: 0 0 15px rgba(255, 111, 97, 0.7);
+  box-shadow: 0 0 15px rgba(173, 216, 230, 0.9);
 }
 
 @media (max-width: 768px) {
