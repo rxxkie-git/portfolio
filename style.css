@@ -597,7 +597,7 @@ body {
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.3),
+    rgba(173, 216, 230, 0.3),
     transparent
   );
   transition: 0.5s;
@@ -615,7 +615,7 @@ body {
 
 .project-btn:hover {
   background: transparent;
-  border: 2px solid rgba(255, 117, 140, 0.8);
+  border: 2px solid rgba(173, 216, 230, 0.8);
   transform: translateY(0) scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   text-shadow: 0 2px 12px rgba(255, 255, 255, 0.4);
