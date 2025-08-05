@@ -709,9 +709,9 @@ body {
 .discord-status {
   display: flex;
   align-items: center;
-  background: #112240;
+  background: rgba(0, 0, 0, 0.5);
   color: #8892B0;
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 10px 15px;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
   z-index: 10;
