@@ -74,18 +74,6 @@
                 <span id="corner-ampm" style="font-weight: 600; font-size: 1.5rem;">AM</span>
             </div>
 
-            <div class="discord-status" aria-live="polite">
-                <div class="discord-avatar-container">
-                    <img id="discord-avatar" src="default-avatar.png" alt="Discord Avatar" width="50" height="50">
-                    <div id="discord-status-badge" class="status-badge">Offline</div>
-                </div>
-                <div class="discord-info">
-                    <h3 id="discord-username">Loading...</h3>
-                    <p id="discord-status">Fetching status...</p>
-                    <div id="discord-badges" class="badges-container"></div>
-                </div>
-            </div>
-    
             <div class="social-icons" data-aos="fade-up">
                 <a href="https://open.spotify.com/user/31q6xxnnek5rrs3vvcck5jwc2ube" class="spotify" target="_blank" rel="noopener noreferrer" aria-label="Spotify Profile">
                     <i class="fab fa-spotify" aria-hidden="true"></i>
@@ -96,6 +84,18 @@
                 <a href="https://www.instagram.com/rxxkie_ig/" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
                     <i class="fab fa-instagram" aria-hidden="true"></i>
                 </a>
+            </div>
+
+            <div class="discord-status" aria-live="polite">
+                <div class="discord-avatar-container">
+                    <img id="discord-avatar" src="default-avatar.png" alt="Discord Avatar" width="50" height="50">
+                    <div id="discord-status-badge" class="status-badge">Offline</div>
+                </div>
+                <div class="discord-info">
+                    <h3 id="discord-username">Loading...</h3>
+                    <p id="discord-status">Fetching status...</p>
+                    <div id="discord-badges" class="badges-container"></div>
+                </div>
             </div>
         </section>
     
@@ -119,48 +119,19 @@
                         <a href="https://github.com/rxxkie-git/musicrecomendation.git" target="_blank" rel="noopener noreferrer" class="project-btn">View Code</a>
                     </div>
                 </div>
-                <div class="project-card" data-aos="flip-right">
-                    <img src="https://i.pinimg.com/736x/c3/54/b0/c354b0938e930d860a53fb39215259dd.jpg" alt="Work in progress project placeholder" loading="lazy" width="300" height="200">
-                    /* HTML: <div class="loader"></div> */
-.loader {
-  height: 60px;
-  aspect-ratio: 1;
-  position: relative;
-  background: 
-    conic-gradient(at 20px 40px,#0000 25%,#524656 0),
-    conic-gradient(from -90deg at 40px 20px,#0000 75%,#524656 0);
-  clip-path: inset(-100% 0);
-}
-.loader:before {
-  content: "";
-  position: absolute;
-  inset: auto 75% 0 0;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #CF4647;
-  animation: 
-    l12-0 .5s cubic-bezier(0,600,1,600) infinite,
-    l12-1  2s linear infinite;
-}
-@keyframes l12-0 {
-  0%,2% {bottom: 0%}
-  98%,to {bottom:.1%}
-}
-@keyframes l12-1 {
-  0% {translate: -18px -80px}
-  to {translate:  62px   0}
-}
+                <div class="project-card" data-aos="flip-left">
+                    <div class="loader"></div>
                     <div class="project-overlay">
-                        <h3>Work in Progress</h3>
-                        <p>Exciting new project in development!</p>
-                        <a href="#" class="project-btn" aria-label="Project coming soon">Stay Tuned</a>
+                        <h3>New Project</h3>
+                        <p>A new project with a cool loader.</p>
+                        <a href="#" class="project-btn">View Code</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer id="contact" class="footer" data-aos="fade-up">
-            <p>© 2025 <strong>roxkie</strong> | Made with <span aria-hidden="true">❤️</span><span class="sr-only">love</span></p>
+            <p>© 2025 roxkie | Made with <span aria-hidden="true">❤️</span><span class="sr-only">love</span></p>
             
             <nav class="footer-links" aria-label="Footer Navigation">
                 <a href="https://github.com/rxxkie-git" 
