@@ -304,6 +304,7 @@ function blackhole(element) {
 
         document.querySelector('.navbar').classList.add('visible');
         document.querySelector('main').classList.add('visible');
+        document.querySelector('#blackhole').style.zIndex = '-1';
     });
 
     centerHover.addEventListener('mouseover', function() {
