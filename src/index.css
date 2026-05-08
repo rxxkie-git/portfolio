@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #050505;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Selection */
+::selection {
+  background: #8b5cf6;
+  /* Violet highlight */
+  color: #fff;
+}
+
+/* Utilities for color transitions */
+/* Utilities for color transitions */
+.gradient-text {
+  background: linear-gradient(to right, #fff, #999);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: background 0.3s ease;
+}
+
+.section-heading-gradient {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+
+
+.card {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.button:hover {
+  border-color: #646cff;
+}
+
+.button:focus,
+.button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Status Pulse Animation */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--status-rgb), 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--status-rgb), 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--status-rgb), 0);
+  }
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #0a0a0a;
+  /* Match card bg */
+  animation: pulse-ring 2s infinite;
+}
+
+/* Glass effect class */
+.glass-panel {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+.hero-section-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 12rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.discord-status-container {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 999;
+  transform: scale(0.8);
+  transform-origin: top right;
+}
+
+.section-heading-responsive {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section-container {
+    padding-top: 8rem;
+    height: auto;
+    min-height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .discord-status-container {
+    top: 5rem;
+    /* Move down below navbar or adjust */
+    right: 1rem;
+    transform: scale(0.7);
+    display: none;
+    /* Hide on mobile to prevent overlay issues */
+  }
+
+  .section-heading-responsive {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+
+.hero-profile-card {
+  background: rgba(5, 5, 5, 0.9);
+  padding: 4rem 3rem;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  width: 90%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-profile-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 0;
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero-profile-card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 24px;
+    width: 95%;
+  }
+
+  .hero-profile-name {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    letter-spacing: 0.05em;
+  }
+}
+
+.footer-container {
+  position: relative;
+  padding: 10rem 2rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+  border-top: 1px solid #222;
+}
+
+.footer-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 13vw;
+  font-weight: 900;
+  color: #0f0f0f;
+  font-family: 'Outfit', sans-serif;
+  z-index: 0;
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 2rem;
+  z-index: 1;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 4rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .footer-socials {
+    gap: 1.5rem;
+  }
+}
+
+.certificate-card {
+  flex: 0 0 auto;
+  width: 350px;
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .certificate-card {
+    width: 280px;
+    margin-right: 1rem;
+  }
+}

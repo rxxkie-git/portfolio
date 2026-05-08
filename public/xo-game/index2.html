@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-area">
+                <div class="game-icon">
+                    <span class="icon-x">X</span>
+                    <span class="icon-o">O</span>
+                </div>
+                <h1>Ultimate <span class="highlight">Tic Tac Toe</span></h1>
+            </div>
+
+            <div class="status-card">
+                <div class="turn-indicator" id="player-turn">
+                    <span class="label">Current Move</span>
+                    <div class="player-badge">
+                        <span class="current-player">X</span>
+                    </div>
+                </div>
+                <div class="message-box">
+                    <span id="message">Game In Progress</span>
+                </div>
+                <button id="rules-btn" class="icon-btn" title="View Rules">?</button>
+            </div>
+        </header>
+
+        <main class="game-board" id="game-board">
+            <!-- 9 Sub-boards -->
+        </main>
+
+        <footer>
+            <button id="restart-btn" class="btn primary-btn">Restart Game</button>
+        </footer>
+    </div>
+
+    <!-- Rules Modal (Start Screen) -->
+    <div id="rules-modal" class="modal">
+        <div class="modal-content rules-content">
+            <h2>Game Rules</h2>
+            <div class="rules-list">
+                <div class="rule-item">
+                    <span class="rule-number">1</span>
+                    <p><strong>Goal:</strong> Win 3 small boards in a row to win the game.</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">2</span>
+                    <p><strong>The Twist:</strong> Your move determines where you <em>cannot</em> play next.</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">3</span>
+                    <p><strong>Constraint:</strong> If you play in a cell, the entire <strong>row and column</strong> of
+                        boards corresponding to that cell's position become <strong>banned</strong> for your next turn.
+                    </p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">4</span>
+                    <p>This restriction tracks each player independently.</p>
+                </div>
+                <div class="example-viz">
+                    <div class="mini-grid">
+                        <div class="mini-cell active"></div>
+                        <div class="mini-cell"></div>
+                        <div class="mini-cell"></div>
+                        <div class="mini-cell"></div>
+                        <div class="mini-cell"></div>
+                        <div class="mini-cell"></div>
+                        <div class="mini-cell"></div>
+                        <div class="mini-cell"></div>
+                        <div class="mini-cell"></div>
+                    </div>
+                    <span>→ Bans Row 1 & Col 1 next turn</span>
+                </div>
+            </div>
+            <button id="start-game-btn" class="btn start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Winner Modal -->
+    <div id="winner-modal" class="modal hidden">
+        <div class="modal-content winner-content">
+            <h2 id="winner-title">Victory!</h2>
+            <div id="winner-text" class="winner-display">Player X Wins!</div>
+            <button id="modal-restart-btn" class="btn primary-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

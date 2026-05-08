@@ -1,0 +1,287 @@
+.projects-main {
+    position: relative;
+    padding-bottom: 5vh;
+    background-color: transparent;
+}
+
+.projects-intro {
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    padding: 0 2rem;
+    text-align: left;
+}
+
+.projects-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Fallback for browsers */
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.projects-subheading {
+    display: none;
+}
+
+.card-container {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+
+.card-wrapper {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    max-width: 90vw;
+    transform-origin: top center;
+}
+
+.project-card-stacked {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    background: #18181b;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 3rem;
+    gap: 3rem;
+}
+
+.card-content-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.card-content-right {
+    flex: 1.2;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-header {
+    margin-bottom: 2rem;
+}
+
+.project-icon-box {
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: #d4d4d8;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-tag {
+    font-size: 0.85rem;
+    color: #e4e4e7;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 99px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 99px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-btn.primary {
+    background: #fff;
+    color: #000;
+}
+
+.project-btn.primary:hover {
+    background: var(--hover-color, #ccc);
+    transform: translateY(-2px);
+}
+
+.project-btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+.project-image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.project-actual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .card-body {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .card-wrapper {
+        width: 95vw;
+        height: auto;
+        min-height: 60vh;
+    }
+
+    .card-content-right {
+        height: 300px;
+        width: 100%;
+        flex: none;
+        order: -1;
+        /* Image on top on tablet/mobile usually looks better, but let's check user preference. Standard is usually image top. */
+    }
+
+    .project-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-intro {
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .projects-heading {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .card-container {
+        height: auto;
+        min-height: auto;
+        padding-bottom: 2rem;
+        top: 10vh;
+        /* Adjust sticky offset */
+    }
+
+    .card-wrapper {
+        width: 90vw;
+        max-width: 100%;
+        min-height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .project-card-stacked {
+        border-radius: 20px;
+        flex-direction: column;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .card-content-right {
+        height: 200px;
+        /* Smaller image area */
+        order: -1;
+        /* Image first */
+        border-radius: 15px;
+    }
+
+    .project-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+
+    .project-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
