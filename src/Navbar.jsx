@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { IndianRupee } from 'lucide-react';
 import './Navbar.css';
-
-import PaymentModal from './PaymentModal';
 
 const Navbar = () => {
     const [hidden, setHidden] = useState(false);
     const [transparent, setTransparent] = useState(true);
-    const [showPaymentModal, setShowPaymentModal] = useState(false);
     const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
@@ -64,30 +60,7 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                {/* Vertical Divider before Button */}
-                <div className="navbar-divider"></div>
-
-                {/* Right: CTA Button */}
-                <motion.button
-                    onClick={() => setShowPaymentModal(true)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="navbar-btn"
-                    style={{
-                        padding: '0.6rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        aspectRatio: '1/1',
-                        border: 'none',
-                        cursor: 'pointer'
-                    }}
-                >
-                    <IndianRupee size={20} />
-                </motion.button>
             </div>
-
-            <PaymentModal isOpen={showPaymentModal} onClose={() => setShowPaymentModal(false)} />
         </motion.nav>
     );
 };
