@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Globe, Cpu, Terminal, Github, ArrowUpRight, Rocket, Gamepad2 } from 'lucide-react';
 import './Projects.css';
 import timetableImg from './assets/timetable.png';
-import labmanualImg from './assets/labmanual.png';
+import labmanualImg from './assets/labmanual.jpeg';
 import portfolioImg from './assets/portfolio.png';
 import blackholeImg from './assets/blackhole.png';
 import ultimateXoImg from './assets/ultimate-xo.png';
