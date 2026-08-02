@@ -25,8 +25,8 @@ const projects = [
         desc: "AI-powered lab manual assistant leveraging large language models and vector search to deliver context-aware, accurate academic guidance.",
         icon: <Cpu size={48} />,
         tags: ['Python', 'RAG', 'FAISS', 'Ollama'],
-        link: "https://github.com/rxxkie-git/capabl-labmanual/tree/main",
-        source: "https://github.com/rxxkie-git/capabl-labmanual/tree/main",
+        link: "https://lab-pilot-capbl.vercel.app/",
+        source: "https://github.com/rxxkie-git/labpilot",
         color: "#3b82f6",
         gradient: "linear-gradient(135deg, #1c1c1c 0%, #1e3a8a 100%)",
         image: labmanualImg
