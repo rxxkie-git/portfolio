@@ -1,14 +1,27 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Globe, Cpu, Terminal, Github, ArrowUpRight, Rocket, Gamepad2 } from 'lucide-react';
+import { Globe, Cpu, Terminal, Github, ArrowUpRight, Rocket, Gamepad2, MessageSquare } from 'lucide-react';
 import './Projects.css';
 import timetableImg from './assets/timetable.png';
 import labmanualImg from './assets/labmanual.jpeg';
 import portfolioImg from './assets/portfolio.png';
 import blackholeImg from './assets/blackhole.png';
 import ultimateXoImg from './assets/ultimate-xo.png';
+import talqImg from './assets/talq.png';
 
 const projects = [
+    {
+        title: "Talq",
+        desc: "A real-time chat application featuring a sleek dark mode UI, inspired by Discord. Supports direct messages, general chat rooms, and online status tracking.",
+        icon: <MessageSquare size={48} />,
+        tags: ['React', 'Node.js', 'Socket.io', 'Tailwind CSS'],
+        link: "https://talq.onrender.com/",
+        source: "https://github.com/rxxkie-git/talq.git",
+        color: "#a855f7",
+        gradient: "linear-gradient(135deg, #1c1c1c 0%, #4c1d95 100%)",
+        image: talqImg,
+        objectFit: "contain"
+    },
     {
         title: "Timetable Generator",
         desc: "A comprehensive scheduling system featuring individual teacher logins, room allocation, and exclusive admin controls for managing timetables and resources.",
@@ -44,7 +57,7 @@ const projects = [
     },
     {
         title: "Ultimate Tic Tac Toe",
-        desc: "A strategic variation of Tic Tac Toe where your move dictates your opponent's next available board, Features independent player constraints and glassmorphism UI.",
+        desc: "A strategic variation of Tic Tac Toe where your move dictates your opponent's next available board. Features independent player constraints and glassmorphism UI.",
         icon: <Gamepad2 size={48} />,
         tags: ['JavaScript', 'HTML5', 'CSS3'],
         link: "/xo-game/index2.html",
@@ -125,7 +138,7 @@ const Card = ({ i, project, progress, range, targetScale }) => {
                                     style={{ scale: imageScale }}
                                 >
                                     <div className="image-overlay" />
-                                    <img src={project.image} alt={project.title} className="project-actual-image" />
+                                    <img src={project.image} alt={project.title} className="project-actual-image" style={{ objectFit: project.objectFit || 'cover' }} />
                                 </motion.div>
                             </div>
                         </div>
@@ -152,13 +165,14 @@ const Projects = () => {
 
             {projects.map((project, i) => {
                 const targetScale = 1 - ((projects.length - i) * 0.05);
+                const startRange = i * (1 / projects.length);
                 return (
                     <Card
                         key={i}
                         i={i}
                         project={project}
                         progress={scrollYProgress}
-                        range={[i * 0.25, 1]}
+                        range={[startRange, 1]}
                         targetScale={targetScale}
                     />
                 );
