@@ -1,4 +1,4 @@
-# Interactive Portfolio
+# Srinand's Portfolio
 
 This is a modern, interactive portfolio built with React (Vite), Framer Motion, and Vanilla CSS.
 
