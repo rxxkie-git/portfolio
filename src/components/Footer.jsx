@@ -188,9 +188,16 @@ const Footer = () => {
             >
                 {/* Col 1: Identity & Time */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                    <span style={{ fontSize: '0.95rem', fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: '#ffffff' }}>
-                        SRINAND NIHAL
-                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                        <img
+                            src="/brand-logo.png"
+                            alt="Logo"
+                            style={{ width: '20px', height: '18px', objectFit: 'contain' }}
+                        />
+                        <span style={{ fontSize: '0.95rem', fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: '#ffffff' }}>
+                            SRINAND NIHAL
+                        </span>
+                    </div>
                     <p style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.6, margin: 0 }}>
                         Multidisciplinary Developer & AI Engineer based in Bengaluru, India.
                     </p>

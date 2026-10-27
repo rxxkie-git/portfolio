@@ -89,7 +89,7 @@ const Navbar = () => {
                         style={{
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '0.6rem',
+                            gap: '0.65rem',
                             textDecoration: 'none',
                             color: '#ffffff',
                             fontWeight: 700,
@@ -98,16 +98,17 @@ const Navbar = () => {
                             fontFamily: "'Space Grotesk', sans-serif"
                         }}
                     >
-                        <span
+                        <img
+                            src="/brand-logo.png"
+                            alt="Logo"
                             style={{
-                                width: '10px',
-                                height: '10px',
-                                borderRadius: '50%',
-                                background: '#ffffff',
-                                display: 'inline-block',
+                                width: '22px',
+                                height: '20px',
+                                objectFit: 'contain',
+                                display: 'block'
                             }}
                         />
-                        SRINAND
+                        <span>SRINAND</span>
                     </a>
 
                     <div
