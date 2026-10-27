@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, ArrowUpRight, Sparkles, Terminal, Coffee } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Sparkles, Terminal } from 'lucide-react';
 import InteractiveScene3D from './InteractiveScene3D';
 
-const Hero = ({ onOpenPayment }) => {
+const Hero = () => {
     const scrollTo = (id) => {
         const el = document.querySelector(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -206,30 +206,6 @@ const Hero = ({ onOpenPayment }) => {
                             <span>Get in Touch</span>
                             <ArrowUpRight size={16} />
                         </button>
-
-                        {onOpenPayment && (
-                            <button
-                                onClick={onOpenPayment}
-                                title="Support / Tip Srinand via UPI"
-                                style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '0.4rem',
-                                    padding: '0.9rem 1.2rem',
-                                    borderRadius: '100px',
-                                    background: 'rgba(255, 255, 255, 0.04)',
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                    fontSize: '0.85rem',
-                                    fontWeight: 500,
-                                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.2s ease'
-                                }}
-                            >
-                                <Coffee size={16} />
-                                <span>Support</span>
-                            </button>
-                        )}
                     </div>
                 </motion.div>
 

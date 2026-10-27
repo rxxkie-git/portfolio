@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
 import resumePdf from '../assets/resume.pdf';
 
-const Navbar = ({ onOpenPayment }) => {
+const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [currentTime, setCurrentTime] = useState('');
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
