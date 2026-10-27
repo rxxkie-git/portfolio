@@ -233,18 +233,15 @@
     }
 
     .card-container {
-        height: auto;
-        min-height: auto;
+        height: 100vh;
         padding-bottom: 2rem;
-        top: 10vh;
-        /* Adjust sticky offset */
+        top: 0;
     }
 
     .card-wrapper {
         width: 90vw;
         max-width: 100%;
         min-height: auto;
-        margin-bottom: 2rem;
     }
 
     .project-card-stacked {

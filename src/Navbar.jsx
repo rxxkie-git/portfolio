@@ -44,12 +44,17 @@ const Navbar = () => {
             <div className="navbar-pill">
                 {/* Left: Logo/Name */}
                 <div className="navbar-logo">
-                    SRINAND
+                    <img
+                        src="/brand-logo.png"
+                        alt="Logo"
+                        style={{ width: '20px', height: '18px', objectFit: 'contain' }}
+                    />
+                    <span>SRINAND</span>
                 </div>
 
                 {/* Center: Links */}
                 <div className="navbar-links">
-                    {['About', 'Skills', 'Certifications', 'Projects'].map((item) => (
+                    {['About', 'Skills', 'Certifications', 'Projects', 'Contact'].map((item) => (
                         <a
                             key={item}
                             href={`#${item.toLowerCase()}`}

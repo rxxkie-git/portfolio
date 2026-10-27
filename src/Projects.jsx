@@ -1,12 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Globe, Cpu, Terminal, Github, ArrowUpRight, Rocket, Gamepad2, MessageSquare } from 'lucide-react';
+import { Globe, Cpu, Terminal, Github, ArrowUpRight, MessageSquare } from 'lucide-react';
 import './Projects.css';
 import timetableImg from './assets/timetable.png';
 import labmanualImg from './assets/labmanual.jpeg';
 import portfolioImg from './assets/portfolio.png';
-import blackholeImg from './assets/blackhole.png';
-import ultimateXoImg from './assets/ultimate-xo.png';
 import talqImg from './assets/talq.png';
 
 const projects = [
@@ -54,28 +52,6 @@ const projects = [
         color: "#22c55e",
         gradient: "linear-gradient(135deg, #1c1c1c 0%, #14532d 100%)",
         image: portfolioImg
-    },
-    {
-        title: "Ultimate Tic Tac Toe",
-        desc: "A strategic variation of Tic Tac Toe where your move dictates your opponent's next available board. Features independent player constraints and glassmorphism UI.",
-        icon: <Gamepad2 size={48} />,
-        tags: ['JavaScript', 'HTML5', 'CSS3'],
-        link: "/xo-game/index2.html",
-        source: "https://github.com/rxxkie-git/portfolio", // Assuming same repo
-        color: "#3b82f6",
-        gradient: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)",
-        image: ultimateXoImg
-    },
-    {
-        title: "Black Hole Game",
-        desc: "An immersive interactive game set against a stunning Three.js black hole backdrop. Features multiplayer modes and dynamic gravitational visual effects.",
-        icon: <Rocket size={48} />,
-        tags: ['JavaScript', 'HTML5', 'CSS3'],
-        link: "/blackhole/index1.html",
-        source: "https://github.com/rxxkie-git/portfolio",
-        color: "#9333ea",
-        gradient: "linear-gradient(135deg, #000000 0%, #4c1d95 100%)",
-        image: blackholeImg
     }
 ];
 
@@ -92,7 +68,7 @@ const Card = ({ i, project, progress, range, targetScale }) => {
     return (
         <div ref={container} className="card-container">
             <motion.div
-                style={{ scale, top: `calc(10vh + ${i * 40}px)` }}
+                style={{ scale, top: `calc(10vh + ${i * 35}px)` }}
                 className="card-wrapper"
             >
                 <div
@@ -122,10 +98,10 @@ const Card = ({ i, project, progress, range, targetScale }) => {
                             </div>
 
                             <div className="project-links">
-                                <a href={project.link} className="project-btn primary" style={{ '--hover-color': project.color }}>
+                                <a href={project.link} className="project-btn primary" style={{ '--hover-color': project.color }} target="_blank" rel="noopener noreferrer">
                                     View Project <ArrowUpRight size={18} />
                                 </a>
-                                <a href={project.source} className="project-btn secondary">
+                                <a href={project.source} className="project-btn secondary" target="_blank" rel="noopener noreferrer">
                                     <Github size={18} /> Source
                                 </a>
                             </div>
@@ -164,7 +140,7 @@ const Projects = () => {
             </div>
 
             {projects.map((project, i) => {
-                const targetScale = 1 - ((projects.length - i) * 0.05);
+                const targetScale = 1 - ((projects.length - 1 - i) * 0.05);
                 const startRange = i * (1 / projects.length);
                 return (
                     <Card

@@ -1,130 +1,52 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Github, Twitter, Mail, Instagram, Linkedin } from 'lucide-react'
-import DiscordStatus from './DiscordStatus'
-import SkillsMarquee from './SkillsMarquee'
-import InteractiveBackground from './InteractiveBackground'
-import Navbar from './Navbar'
-import CertificateRotator from './CertificateRotator'
-import './SkillsMarquee.css'
-import './index.css'
-import Projects from './Projects'
-import HeroProfile from './HeroProfile'
+import React, { useState } from 'react';
+import CustomCursor from './components/CustomCursor';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
+import Expertise from './components/Expertise';
+import Certificates from './components/Certificates';
+import About from './components/About';
+import Footer from './components/Footer';
+import PaymentModal from './components/PaymentModal';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 120 }
-    }
-  }
+  const [paymentModalOpen, setPaymentModalOpen] = useState(false);
 
   return (
-    <div style={{ paddingBottom: '4rem' }}>
-      <Navbar />
+    <div className="portfolio-app-root">
+      {/* Smooth Awwwards Custom Cursor */}
+      <CustomCursor />
 
-      {/* Hero Section */}
-      <motion.section
-        id="about"
-        className="hero hero-section-container"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <InteractiveBackground />
+      {/* Floating Glass Minimalist Header with Live IST Clock */}
+      <Navbar onOpenPayment={() => setPaymentModalOpen(true)} />
 
-        {/* Floating Discord Status */}
-        <div className="discord-status-container">
-          <DiscordStatus />
-        </div>
+      {/* Hero Section with Interactive 3D Canvas Scene */}
+      <main>
+        <Hero onOpenPayment={() => setPaymentModalOpen(true)} />
 
-        <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-          <HeroProfile />
-        </div>
-      </motion.section>
+        {/* Selected Works & Interactive Case Studies */}
+        <Projects />
 
-      {/* Skills Section */}
-      <section id="skills" style={{ maxWidth: '100vw', margin: '4rem 0', padding: '0' }}>
-        <h2 className="section-heading-gradient section-heading-responsive">
-          Skills
-        </h2>
-        <SkillsMarquee />
-      </section>
+        {/* Core Expertise & Technical Capabilities Matrix */}
+        <Expertise />
 
-      {/* Certifications Section */}
-      <section id="certifications" style={{ maxWidth: '100vw', margin: '4rem 0', padding: '0' }}>
-        <h2 className="section-heading-gradient section-heading-responsive">
-          Certifications
-        </h2>
-        <CertificateRotator />
-      </section>
+        {/* Certifications & Milestones with Fullscreen Image Inspector */}
+        <Certificates />
 
-      {/* Projects Section */}
-      <Projects />
+        {/* About Section with Real-Time Discord Presence & Bio */}
+        <About />
+      </main>
 
-      {/* Footer / Contact */}
-      <footer id="contact" className="footer-container">
-        {/* Large Watermark Text */}
-        <div className="footer-watermark">
-          SRINAND
-        </div>
+      {/* Contact & Interactive Footer */}
+      <Footer />
 
-        {/* Social Icons Removed as per request */}
-
-        {/* Copyright */}
-        <p style={{
-          color: '#a1a1aa',
-          fontSize: '0.9rem',
-          zIndex: 10,
-          position: 'absolute',
-          bottom: '1rem',
-          width: '100%',
-          textAlign: 'center',
-          pointerEvents: 'none'
-        }}>
-          © 2025 | Made with ❤️
-        </p>
-      </footer>
+      {/* Direct UPI Support Modal */}
+      <PaymentModal
+        isOpen={paymentModalOpen}
+        onClose={() => setPaymentModalOpen(false)}
+      />
     </div>
-  )
+  );
 }
 
-const SocialLink = ({ icon, href }) => (
-  <motion.a
-    href={href}
-    whileHover={{ y: -3, color: '#fff' }}
-    style={{
-      color: '#aaa', // Light grey/beige
-      padding: '12px',
-      border: '1px solid rgba(255, 255, 255, 0.1)', // Very subtle border
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textDecoration: 'none',
-      background: 'transparent',
-      transition: 'all 0.3s ease'
-    }}
-  >
-    {icon}
-  </motion.a>
-)
-
-
-
-export default App
+export default App;

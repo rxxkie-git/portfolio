@@ -106,7 +106,7 @@ const HeroProfile = () => {
                     19-year-old who loves coding, learning about AI. Just figuring it all out and enjoying the process.
                 </p>
 
-                <div style={{
+                <div id="contact" style={{
                     display: 'flex',
                     gap: '0.8rem',
                     marginTop: '2rem',
