@@ -166,7 +166,6 @@ const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [filter, setFilter] = useState('ALL');
     const [isWindowOpen, setIsWindowOpen] = useState(false);
-    const [showAllInline, setShowAllInline] = useState(false);
 
     const filteredProjects = filter === 'ALL'
         ? projectsData
@@ -174,8 +173,9 @@ const Projects = () => {
             ? projectsData.filter(p => p.category.includes('AI') || p.tags.includes('Python'))
             : projectsData.filter(p => p.tags.includes('React') || p.tags.includes('Node.js') || p.tags.includes('JavaScript') || p.tags.includes('Laravel'));
 
-    // Limit to 3 projects when browsing "ALL" unless user expands inline
-    const displayProjects = (filter === 'ALL' && !showAllInline)
+    // Top 3 projects shown on the main page
+    const otherProjects = projectsData.slice(3);
+    const displayProjects = filter === 'ALL'
         ? filteredProjects.slice(0, 3)
         : filteredProjects;
 
@@ -297,7 +297,7 @@ const Projects = () => {
                         }}
                     >
                         <Layers size={13} color="#4ade80" />
-                        <span>MORE PROJECTS ({projectsData.length})</span>
+                        <span>OTHER PROJECTS ({otherProjects.length})</span>
                     </button>
                 </div>
             </div>
@@ -550,7 +550,7 @@ const Projects = () => {
                 ))}
 
                 {/* More Projects Editorial Card right after the 3rd project */}
-                {filter === 'ALL' && !showAllInline && (
+                {filter === 'ALL' && (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -603,7 +603,7 @@ const Projects = () => {
                                 }}
                             >
                                 <Layers size={13} />
-                                <span>+{projectsData.length - 3} MORE PROJECTS ARCHIVED</span>
+                                <span>+{otherProjects.length} OTHER PROJECTS</span>
                             </div>
 
                             <h3
@@ -617,7 +617,7 @@ const Projects = () => {
                                     lineHeight: 1.2
                                 }}
                             >
-                                Explore Full Archive & Experiments.
+                                Explore Other Projects.
                             </h3>
 
                             <p
@@ -629,13 +629,13 @@ const Projects = () => {
                                     margin: '0 0 1.5rem 0'
                                 }}
                             >
-                                Open the dedicated window to browse additional system design architectures, constraint solvers, WebGL gravitational simulations, and retro games.
+                                Open the window to view my other works including academic scheduling tools, interactive WebGL simulations, and logic games.
                             </p>
 
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                                {['Timetable AI', 'Developer Portfolio', 'Ultimate XO', 'Black Hole 3D'].map((name) => (
+                                {otherProjects.map((p) => (
                                     <span
-                                        key={name}
+                                        key={p.id}
                                         style={{
                                             fontSize: '0.72rem',
                                             fontFamily: "'JetBrains Mono', monospace",
@@ -646,7 +646,7 @@ const Projects = () => {
                                             color: 'rgba(255, 255, 255, 0.8)'
                                         }}
                                     >
-                                        {name}
+                                        {p.title}
                                     </span>
                                 ))}
                             </div>
@@ -673,112 +673,22 @@ const Projects = () => {
                                     gap: '0.4rem'
                                 }}
                             >
-                                <span>Launch Window</span>
+                                <span>View Other Projects</span>
                                 <ArrowUpRight size={16} />
                             </span>
                             <span style={{ fontSize: '0.75rem', fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255, 255, 255, 0.4)' }}>
-                                {projectsData.length} WORKS TOTAL
+                                {otherProjects.length} OTHER WORKS
                             </span>
                         </div>
                     </motion.div>
                 )}
             </div>
 
-            {/* Bottom Controls / More Projects Banner */}
-            <div
-                style={{
-                    marginTop: '3.5rem',
-                    padding: '1.5rem 2rem',
-                    borderRadius: '16px',
-                    background: 'rgba(255, 255, 255, 0.02)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '1.25rem'
-                }}
-            >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <span
-                        style={{
-                            width: '8px',
-                            height: '8px',
-                            borderRadius: '50%',
-                            background: '#4ade80',
-                            boxShadow: '0 0 10px #4ade80'
-                        }}
-                    />
-                    <span
-                        style={{
-                            fontSize: '0.85rem',
-                            fontFamily: "'JetBrains Mono', monospace",
-                            color: 'rgba(255, 255, 255, 0.8)'
-                        }}
-                    >
-                        Showing {displayProjects.length} of {projectsData.length} Selected Works
-                    </span>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-                    <button
-                        onClick={() => setShowAllInline(!showAllInline)}
-                        style={{
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.12)',
-                            color: '#ffffff',
-                            padding: '0.65rem 1.25rem',
-                            borderRadius: '100px',
-                            fontSize: '0.8rem',
-                            fontWeight: 500,
-                            fontFamily: "'Inter', sans-serif",
-                            cursor: 'pointer',
-                            transition: 'all 0.2s'
-                        }}
-                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)')}
-                    >
-                        {showAllInline ? 'Show Top 3 Only' : 'Expand All Inline'}
-                    </button>
-
-                    <button
-                        onClick={() => setIsWindowOpen(true)}
-                        style={{
-                            background: '#ffffff',
-                            border: 'none',
-                            color: '#000000',
-                            padding: '0.65rem 1.4rem',
-                            borderRadius: '100px',
-                            fontSize: '0.8rem',
-                            fontWeight: 600,
-                            fontFamily: "'Inter', sans-serif",
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem',
-                            boxShadow: '0 4px 20px rgba(255, 255, 255, 0.15)',
-                            transition: 'transform 0.2s, box-shadow 0.2s'
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-2px)';
-                            e.currentTarget.style.boxShadow = '0 6px 25px rgba(255, 255, 255, 0.25)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(255, 255, 255, 0.15)';
-                        }}
-                    >
-                        <Maximize2 size={15} />
-                        <span>Open Projects Window</span>
-                    </button>
-                </div>
-            </div>
-
-            {/* Standalone All Projects Window Modal */}
+            {/* Standalone Other Projects Window Modal */}
             <ProjectsWindow
                 isOpen={isWindowOpen}
                 onClose={() => setIsWindowOpen(false)}
-                projects={projectsData}
+                projects={otherProjects}
                 onSelectProject={(project) => setSelectedProject(project)}
             />
 

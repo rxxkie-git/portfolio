@@ -29,8 +29,8 @@ const ProjectsWindow = ({ isOpen, onClose, projects, onSelectProject }) => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, onClose]);
 
-    // Dynamic filtering
-    const categories = ['ALL', 'FINTECH', 'AI & RAG', 'FULL-STACK', '3D & GAMES'];
+    // Dynamic filtering for other projects
+    const categories = ['ALL', 'SYSTEM DESIGN', 'CREATIVE & 3D', 'GAMES & LOGIC'];
 
     const filteredProjects = useMemo(() => {
         return projects.filter((project) => {
@@ -43,17 +43,14 @@ const ProjectsWindow = ({ isOpen, onClose, projects, onSelectProject }) => {
             if (!matchesSearch) return false;
 
             if (activeFilter === 'ALL') return true;
-            if (activeFilter === 'FINTECH') {
-                return project.category.includes('FINTECH') || project.tags.includes('Laravel') || project.tags.includes('Shopify');
+            if (activeFilter === 'SYSTEM DESIGN') {
+                return project.category.includes('SYSTEM') || project.category.includes('ALGORITHMS') || project.tags.includes('Constraint Algorithms');
             }
-            if (activeFilter === 'AI & RAG') {
-                return project.category.includes('AI') || project.tags.includes('Python') || project.tags.includes('FAISS');
+            if (activeFilter === 'CREATIVE & 3D') {
+                return project.category.includes('CREATIVE') || project.category.includes('3D') || project.tags.includes('Three.js') || project.tags.includes('Interactive 3D');
             }
-            if (activeFilter === 'FULL-STACK') {
-                return project.category.includes('FULL-STACK') || project.tags.includes('Node.js') || project.tags.includes('Socket.io') || project.tags.includes('React');
-            }
-            if (activeFilter === '3D & GAMES') {
-                return project.category.includes('3D') || project.category.includes('GAMES') || project.tags.includes('Three.js') || project.tags.includes('WebGL') || project.tags.includes('Game Theory');
+            if (activeFilter === 'GAMES & LOGIC') {
+                return project.category.includes('GAMES') || project.tags.includes('Game Theory') || project.tags.includes('Physics Simulation');
             }
             return true;
         });
@@ -142,9 +139,9 @@ const ProjectsWindow = ({ isOpen, onClose, projects, onSelectProject }) => {
                                 }}
                             >
                                 <Layers size={14} color="#4ade80" />
-                                <span>ALL_PROJECTS_WINDOW.sh</span>
+                                <span>OTHER_PROJECTS.window</span>
                                 <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>//</span>
-                                <span style={{ color: '#4ade80' }}>{projects.length} TOTAL WORKS</span>
+                                <span style={{ color: '#4ade80' }}>{projects.length} OTHER PROJECTS</span>
                             </span>
                         </div>
 
@@ -204,7 +201,7 @@ const ProjectsWindow = ({ isOpen, onClose, projects, onSelectProject }) => {
                             <Search size={15} color="rgba(255, 255, 255, 0.4)" />
                             <input
                                 type="text"
-                                placeholder="Search by name, stack, keyword..."
+                                placeholder="Search other projects or tech..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 style={{
@@ -285,7 +282,7 @@ const ProjectsWindow = ({ isOpen, onClose, projects, onSelectProject }) => {
                                 <Sparkles size={36} color="rgba(255, 255, 255, 0.2)" style={{ marginBottom: '1rem' }} />
                                 <h3 style={{ color: '#ffffff', fontSize: '1.2rem', margin: '0 0 0.5rem 0' }}>No projects found</h3>
                                 <p style={{ fontSize: '0.85rem', margin: 0 }}>
-                                    No works match "{searchQuery}". Try clearing search or selecting "ALL".
+                                    No projects match "{searchQuery}". Try clearing your search.
                                 </p>
                             </div>
                         ) : (

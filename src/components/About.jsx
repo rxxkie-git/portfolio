@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Instagram, Code, FileText, Disc, Gamepad2, Headphones, Code2, Sparkles, MapPin, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Instagram, Code, FileText, Sparkles, MapPin, GraduationCap } from 'lucide-react';
 import resumeUrl from '../assets/resume.pdf';
 
 const DISCORD_ID = '1116627987404701706';
@@ -43,9 +43,6 @@ const About = () => {
 
     const userStatus = discordData?.discord_status || 'online';
     const statusColor = statusColors[userStatus] || '#22c55e';
-    const activities = discordData?.activities || [];
-    const customStatus = activities.find(a => a.type === 4);
-    const primaryActivity = customStatus || activities[0];
 
     const socials = [
         { name: 'GitHub', icon: <Github size={18} />, href: 'https://github.com/rxxkie-git' },
@@ -196,47 +193,11 @@ const About = () => {
                             fontSize: '0.85rem',
                             color: '#38bdf8',
                             fontFamily: "'JetBrains Mono', monospace",
-                            margin: '0 0 1.25rem 0'
+                            margin: '0 0 1.5rem 0'
                         }}
                     >
                         Developer & AI Systems Engineer
                     </p>
-
-                    {/* Discord Activity Pill */}
-                    <div
-                        style={{
-                            width: '100%',
-                            padding: '0.85rem 1rem',
-                            borderRadius: '12px',
-                            background: 'rgba(255, 255, 255, 0.03)',
-                            border: '1px solid rgba(255, 255, 255, 0.06)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '0.6rem',
-                            marginBottom: '2rem'
-                        }}
-                    >
-                        <span
-                            style={{
-                                width: '8px',
-                                height: '8px',
-                                borderRadius: '50%',
-                                backgroundColor: statusColor
-                            }}
-                        />
-                        <span
-                            style={{
-                                fontSize: '0.78rem',
-                                color: 'rgba(255, 255, 255, 0.8)',
-                                fontFamily: "'Inter', sans-serif"
-                            }}
-                        >
-                            {primaryActivity
-                                ? `${primaryActivity.name}: ${primaryActivity.state || primaryActivity.details || 'Active'}`
-                                : `Discord: ${userStatus.toUpperCase()}`}
-                        </span>
-                    </div>
 
                     {/* Metadata Items */}
                     <div

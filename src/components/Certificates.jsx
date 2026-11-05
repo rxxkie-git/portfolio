@@ -12,6 +12,14 @@ const certificates = [
         desc: 'Advanced hands-on program covering Agentic AI architectures, autonomous multi-agent task execution, and retrieval-augmented generation.'
     },
     {
+        title: 'Introduction to Cryptography for Beginners',
+        issuer: 'Simplilearn SkillUp',
+        date: 'Oct 2026',
+        category: 'Cybersecurity & Crypto',
+        image: '/certificates/cryptography-simplilearn.jpg',
+        desc: 'Core cryptographic principles covering symmetric and asymmetric encryption, public-key infrastructure, cryptographic hashing algorithms, and secure communication protocols.'
+    },
+    {
         title: 'Starfleet Club Appreciation',
         issuer: 'RVITM - Antikythera Tech Club',
         date: '2025',
