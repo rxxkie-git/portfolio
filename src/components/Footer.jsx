@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, Copy, Check, MessageSquare, Terminal, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Copy, Check } from 'lucide-react';
 import resumePdf from '../assets/resume.pdf';
 
 const EMAIL = '5420380.x.srinand@gmail.com';
@@ -251,12 +250,12 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{
-                                fontSize: '0.85rem',
-                                color: 'rgba(255, 255, 255, 0.7)',
-                                textDecoration: 'none',
                                 display: 'inline-flex',
                                 alignItems: 'center',
                                 gap: '0.3rem',
+                                fontSize: '0.85rem',
+                                color: 'rgba(255, 255, 255, 0.7)',
+                                textDecoration: 'none',
                                 transition: 'color 0.2s'
                             }}
                             onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
@@ -285,7 +284,7 @@ const Footer = () => {
                 }}
             >
                 <span>© {new Date().getFullYear()} SRINAND NIHAL. ALL RIGHTS RESERVED.</span>
-                <span>INSPIRED BY DTAMPE.COM • CRAFTED WITH REACT 19 & CANVAS 3D</span>
+                <span>CRAFTED WITH REACT 19 & CANVAS 3D</span>
             </div>
         </footer>
     );

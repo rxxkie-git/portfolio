@@ -1,17 +1,42 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Github, Sparkles, Layers, Eye } from 'lucide-react';
+import { ArrowUpRight, Github, Sparkles, Layers, Eye, Maximize2, FolderGit2 } from 'lucide-react';
 import CaseStudyModal from './CaseStudyModal';
+import ProjectsWindow from './ProjectsWindow';
 
+import paymentPortalImg from '../assets/payment-portal.png';
 import talqImg from '../assets/talq.png';
-import timetableImg from '../assets/timetable.png';
 import labmanualImg from '../assets/labmanual.jpeg';
+import timetableImg from '../assets/timetable.png';
 import portfolioImg from '../assets/portfolio.png';
+import ultimateXoImg from '../assets/ultimate-xo.png';
+import blackholeImg from '../assets/blackhole.png';
 
 const projectsData = [
     {
-        id: 'talq',
+        id: 'payment-portal',
         index: '01',
+        title: 'Payment Portal',
+        subtitle: 'Enterprise Multi-Tenant Payment Orchestrator & Checkout Engine',
+        category: 'FINTECH & ARCHITECTURE',
+        year: '2025',
+        desc: 'A high-throughput multi-merchant payment orchestration and checkout redirect platform built with Laravel, Inertia.js, and React. Engineered with Domain-Driven Design (DDD) to handle multi-store routing, headless checkout interceptors, and resilient multi-provider payment failovers.',
+        vision: 'Modern e-commerce brands often struggle with single-point gateway failures, rigid checkout funnels, and fragmented multi-store management. Payment Portal decouples the checkout layer into an extensible, resilient architecture supporting custom Shopify/WooCommerce interceptors, merchant isolation, and autonomous reconciliations.',
+        highlights: [
+            'Domain-Driven Design (DDD) & SOLID modular architecture with discrete domain services',
+            'Universal checkout redirect interceptors supporting Shopify and WooCommerce (PHP 7.4+)',
+            'Multi-provider payment gateway routing (Mamo, Oneway) with transaction lifecycle tracking',
+            'High-productivity merchant administration suite crafted with Inertia.js, React, and Shadcn UI'
+        ],
+        tags: ['Laravel', 'React', 'Inertia.js', 'Tailwind CSS', 'Shopify', 'WooCommerce', 'DDD'],
+        link: 'https://github.com/rxxkie-git/payment-portal.git',
+        source: 'https://github.com/rxxkie-git/payment-portal.git',
+        image: paymentPortalImg,
+        objectFit: 'cover'
+    },
+    {
+        id: 'talq',
+        index: '02',
         title: 'Talq',
         subtitle: 'Real-Time Discord-Inspired Messaging Architecture',
         category: 'FULL-STACK REAL-TIME',
@@ -31,8 +56,29 @@ const projectsData = [
         objectFit: 'contain'
     },
     {
+        id: 'labmanual',
+        index: '03',
+        title: 'Lab Manual Assistant',
+        subtitle: 'Context-Aware Academic AI Powered by RAG & Vector Search',
+        category: 'AGENTIC AI & RAG',
+        year: '2025',
+        desc: 'Academic assistant leveraging Retrieval-Augmented Generation (RAG) and high-dimensional vector embeddings with FAISS to provide precise, hallucination-resistant guidance on university lab manuals.',
+        vision: 'Students frequently waste hours deciphering dense laboratory manuals and debugging experiment syntax. LabPilot enables conversational, context-aware querying directly against verified course literature.',
+        highlights: [
+            'FAISS vector database indexing for fast semantic retrieval of lab manuals',
+            'Local & cloud LLM pipelines with Ollama for zero-cost inferences',
+            'Prompt-engineered guardrails ensuring strict syllabus compliance',
+            'Interactive chat frontend with syntax-highlighted code output'
+        ],
+        tags: ['Python', 'RAG Pipelines', 'FAISS Vector DB', 'Ollama', 'LangChain'],
+        link: 'https://lab-pilot-capbl.vercel.app/',
+        source: 'https://github.com/rxxkie-git/labpilot',
+        image: labmanualImg,
+        objectFit: 'cover'
+    },
+    {
         id: 'timetable',
-        index: '02',
+        index: '04',
         title: 'Timetable Generator',
         subtitle: 'Automated Academic Scheduling & Conflict Resolution System',
         category: 'SYSTEM DESIGN & ALGORITHMS',
@@ -52,29 +98,8 @@ const projectsData = [
         objectFit: 'cover'
     },
     {
-        id: 'labmanual',
-        index: '03',
-        title: 'Lab Manual Assistant',
-        subtitle: 'Context-Aware Academic AI Powered by RAG & Vector Search',
-        category: 'AGENTIC AI & RAG',
-        year: '2025',
-        desc: 'Academic assistant leveraging Retrieval-Augmented Generation (RAG) and high-dimensional vector embeddings with FAISS to provide precise, halluncination-resistant guidance on university lab manuals.',
-        vision: 'Students frequently waste hours deciphering dense laboratory manuals and debugging experiment syntax. LabPilot enables conversational, context-aware querying directly against verified course literature.',
-        highlights: [
-            'FAISS vector database indexing for fast semantic retrieval of lab manuals',
-            'Local & cloud LLM pipelines with Ollama for zero-cost inferences',
-            'Prompt-engineered guardrails ensuring strict syllabus compliance',
-            'Interactive chat frontend with syntax-highlighted code output'
-        ],
-        tags: ['Python', 'RAG Pipelines', 'FAISS Vector DB', 'Ollama', 'LangChain'],
-        link: 'https://lab-pilot-capbl.vercel.app/',
-        source: 'https://github.com/rxxkie-git/labpilot',
-        image: labmanualImg,
-        objectFit: 'cover'
-    },
-    {
         id: 'portfolio',
-        index: '04',
+        index: '05',
         title: 'Developer Portfolio',
         subtitle: 'Award-Winning WebGL & Swiss Typographic Architecture',
         category: 'CREATIVE DEV & 3D',
@@ -92,18 +117,67 @@ const projectsData = [
         source: 'https://github.com/rxxkie-git/portfolio',
         image: portfolioImg,
         objectFit: 'cover'
+    },
+    {
+        id: 'ultimate-xo',
+        index: '06',
+        title: 'Ultimate Tic Tac Toe',
+        subtitle: 'Recursive Board Strategy & Constraint Resolution Engine',
+        category: 'ALGORITHMS & GAMES',
+        year: '2025',
+        desc: 'A complex strategic variation of Tic Tac Toe where every move dictates which sub-grid the opponent must contest. Engineered with strict recursive state validation and glassmorphic UI.',
+        vision: 'Transforming classic combinatorial games into deep strategic puzzles through real-time constraint enforcement and crisp tactile visual feedback.',
+        highlights: [
+            'Recursive 9x9 board state evaluation engine with dynamic cell locking',
+            'Glassmorphic dark UI with animated move transitions',
+            'Independent win-state cascade algorithm across macro and micro boards',
+            'Zero external dependencies lightweight vanilla implementation'
+        ],
+        tags: ['JavaScript', 'HTML5', 'CSS3', 'Game Theory', 'State Machines'],
+        link: '/xo-game/index2.html',
+        source: 'https://github.com/rxxkie-git/portfolio',
+        image: ultimateXoImg,
+        objectFit: 'cover'
+    },
+    {
+        id: 'blackhole',
+        index: '07',
+        title: 'Black Hole Cosmos',
+        subtitle: 'Interactive Three.js Gravitational WebGL Experience',
+        category: 'CREATIVE DEV & 3D',
+        year: '2025',
+        desc: 'An atmospheric interactive gravitational simulation set against a Three.js black hole canvas with dynamic relativistic visual distortion, particle accretion, and multiplayer mechanics.',
+        vision: 'Exploring the intersection of physics-inspired orbital mechanics, shader aesthetics, and real-time interactive canvas gameplay in modern web browsers.',
+        highlights: [
+            'Particle accretion physics simulation driven by Three.js shaders',
+            'Relativistic gravitational lensing post-processing effects',
+            'Adaptive frame-rate rendering loop with canvas fallback',
+            'Integrated arcade mechanics with high-score tracking'
+        ],
+        tags: ['Three.js', 'WebGL', 'JavaScript', 'Physics Simulation', 'Canvas'],
+        link: '/blackhole/index1.html',
+        source: 'https://github.com/rxxkie-git/portfolio',
+        image: blackholeImg,
+        objectFit: 'cover'
     }
 ];
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [filter, setFilter] = useState('ALL');
+    const [isWindowOpen, setIsWindowOpen] = useState(false);
+    const [showAllInline, setShowAllInline] = useState(false);
 
     const filteredProjects = filter === 'ALL'
         ? projectsData
         : filter === 'AI'
             ? projectsData.filter(p => p.category.includes('AI') || p.tags.includes('Python'))
-            : projectsData.filter(p => p.tags.includes('React') || p.tags.includes('Node.js') || p.tags.includes('JavaScript'));
+            : projectsData.filter(p => p.tags.includes('React') || p.tags.includes('Node.js') || p.tags.includes('JavaScript') || p.tags.includes('Laravel'));
+
+    // Limit to 3 projects when browsing "ALL" unless user expands inline
+    const displayProjects = (filter === 'ALL' && !showAllInline)
+        ? filteredProjects.slice(0, 3)
+        : filteredProjects;
 
     return (
         <section
@@ -144,7 +218,7 @@ const Projects = () => {
                     >
                         <span>● (01) / SELECTED WORKS</span>
                         <span>•</span>
-                        <span>{filteredProjects.length} PROJECTS</span>
+                        <span>{displayProjects.length} OF {projectsData.length} PROJECTS</span>
                     </div>
 
                     <h2
@@ -161,37 +235,70 @@ const Projects = () => {
                     </h2>
                 </div>
 
-                {/* Filter Pills */}
-                <div
-                    style={{
-                        display: 'flex',
-                        gap: '0.4rem',
-                        background: 'rgba(255, 255, 255, 0.03)',
-                        padding: '0.35rem',
-                        borderRadius: '100px',
-                        border: '1px solid rgba(255, 255, 255, 0.08)'
-                    }}
-                >
-                    {['ALL', 'AI', 'WEB'].map((tab) => (
-                        <button
-                            key={tab}
-                            onClick={() => setFilter(tab)}
-                            style={{
-                                background: filter === tab ? '#ffffff' : 'transparent',
-                                color: filter === tab ? '#000000' : 'rgba(255, 255, 255, 0.6)',
-                                border: 'none',
-                                borderRadius: '100px',
-                                padding: '0.45rem 1rem',
-                                fontSize: '0.75rem',
-                                fontFamily: "'JetBrains Mono', monospace",
-                                fontWeight: 600,
-                                cursor: 'pointer',
-                                transition: 'all 0.25s ease'
-                            }}
-                        >
-                            {tab}
-                        </button>
-                    ))}
+                {/* Filter Pills & Window Trigger */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    <div
+                        style={{
+                            display: 'flex',
+                            gap: '0.4rem',
+                            background: 'rgba(255, 255, 255, 0.03)',
+                            padding: '0.35rem',
+                            borderRadius: '100px',
+                            border: '1px solid rgba(255, 255, 255, 0.08)'
+                        }}
+                    >
+                        {['ALL', 'AI', 'WEB'].map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setFilter(tab)}
+                                style={{
+                                    background: filter === tab ? '#ffffff' : 'transparent',
+                                    color: filter === tab ? '#000000' : 'rgba(255, 255, 255, 0.6)',
+                                    border: 'none',
+                                    borderRadius: '100px',
+                                    padding: '0.45rem 1rem',
+                                    fontSize: '0.75rem',
+                                    fontFamily: "'JetBrains Mono', monospace",
+                                    fontWeight: 600,
+                                    cursor: 'pointer',
+                                    transition: 'all 0.25s ease'
+                                }}
+                            >
+                                {tab}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Quick Window Trigger Button */}
+                    <button
+                        onClick={() => setIsWindowOpen(true)}
+                        style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            color: '#ffffff',
+                            border: '1px solid rgba(255, 255, 255, 0.12)',
+                            borderRadius: '100px',
+                            padding: '0.45rem 1.1rem',
+                            fontSize: '0.75rem',
+                            fontFamily: "'JetBrains Mono', monospace",
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.45rem',
+                            transition: 'all 0.25s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
+                            e.currentTarget.style.borderColor = 'rgba(74, 222, 128, 0.4)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                        }}
+                    >
+                        <Layers size={13} color="#4ade80" />
+                        <span>MORE PROJECTS ({projectsData.length})</span>
+                    </button>
                 </div>
             </div>
 
@@ -203,7 +310,7 @@ const Projects = () => {
                     gap: '2.5rem'
                 }}
             >
-                {filteredProjects.map((project, idx) => (
+                {displayProjects.map((project, idx) => (
                     <motion.div
                         key={project.id}
                         initial={{ opacity: 0, y: 20 }}
@@ -441,7 +548,239 @@ const Projects = () => {
                         </div>
                     </motion.div>
                 ))}
+
+                {/* More Projects Editorial Card right after the 3rd project */}
+                {filter === 'ALL' && !showAllInline && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.25 }}
+                        className="interactive-card"
+                        style={{
+                            background: 'linear-gradient(145deg, rgba(22, 22, 22, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)',
+                            border: '1px dashed rgba(255, 255, 255, 0.2)',
+                            borderRadius: '18px',
+                            padding: '2.5rem 2rem',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            cursor: 'pointer',
+                            minHeight: '380px'
+                        }}
+                        onClick={() => setIsWindowOpen(true)}
+                    >
+                        {/* Glow accent */}
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: '-30px',
+                                right: '-30px',
+                                width: '180px',
+                                height: '180px',
+                                background: 'radial-gradient(circle, rgba(74, 222, 128, 0.16) 0%, transparent 70%)',
+                                borderRadius: '50%',
+                                pointerEvents: 'none'
+                            }}
+                        />
+
+                        <div>
+                            <div
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    background: 'rgba(74, 222, 128, 0.1)',
+                                    border: '1px solid rgba(74, 222, 128, 0.25)',
+                                    padding: '0.35rem 0.75rem',
+                                    borderRadius: '100px',
+                                    fontSize: '0.72rem',
+                                    fontFamily: "'JetBrains Mono', monospace",
+                                    color: '#4ade80',
+                                    marginBottom: '1.5rem'
+                                }}
+                            >
+                                <Layers size={13} />
+                                <span>+{projectsData.length - 3} MORE PROJECTS ARCHIVED</span>
+                            </div>
+
+                            <h3
+                                style={{
+                                    fontFamily: "'Space Grotesk', sans-serif",
+                                    fontSize: 'clamp(1.6rem, 2.5vw, 2.1rem)',
+                                    fontWeight: 700,
+                                    color: '#ffffff',
+                                    margin: '0 0 1rem 0',
+                                    letterSpacing: '-0.02em',
+                                    lineHeight: 1.2
+                                }}
+                            >
+                                Explore Full Archive & Experiments.
+                            </h3>
+
+                            <p
+                                style={{
+                                    fontSize: '0.9rem',
+                                    lineHeight: 1.6,
+                                    color: 'rgba(255, 255, 255, 0.65)',
+                                    fontFamily: "'Inter', sans-serif",
+                                    margin: '0 0 1.5rem 0'
+                                }}
+                            >
+                                Open the dedicated window to browse additional system design architectures, constraint solvers, WebGL gravitational simulations, and retro games.
+                            </p>
+
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                                {['Timetable AI', 'Developer Portfolio', 'Ultimate XO', 'Black Hole 3D'].map((name) => (
+                                    <span
+                                        key={name}
+                                        style={{
+                                            fontSize: '0.72rem',
+                                            fontFamily: "'JetBrains Mono', monospace",
+                                            padding: '0.25rem 0.6rem',
+                                            borderRadius: '4px',
+                                            background: 'rgba(255, 255, 255, 0.04)',
+                                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                                            color: 'rgba(255, 255, 255, 0.8)'
+                                        }}
+                                    >
+                                        {name}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div
+                            style={{
+                                marginTop: '2rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                                paddingTop: '1.25rem'
+                            }}
+                        >
+                            <span
+                                style={{
+                                    fontSize: '0.85rem',
+                                    fontWeight: 600,
+                                    fontFamily: "'Inter', sans-serif",
+                                    color: '#4ade80',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.4rem'
+                                }}
+                            >
+                                <span>Launch Window</span>
+                                <ArrowUpRight size={16} />
+                            </span>
+                            <span style={{ fontSize: '0.75rem', fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255, 255, 255, 0.4)' }}>
+                                {projectsData.length} WORKS TOTAL
+                            </span>
+                        </div>
+                    </motion.div>
+                )}
             </div>
+
+            {/* Bottom Controls / More Projects Banner */}
+            <div
+                style={{
+                    marginTop: '3.5rem',
+                    padding: '1.5rem 2rem',
+                    borderRadius: '16px',
+                    background: 'rgba(255, 255, 255, 0.02)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '1.25rem'
+                }}
+            >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <span
+                        style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            background: '#4ade80',
+                            boxShadow: '0 0 10px #4ade80'
+                        }}
+                    />
+                    <span
+                        style={{
+                            fontSize: '0.85rem',
+                            fontFamily: "'JetBrains Mono', monospace",
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        }}
+                    >
+                        Showing {displayProjects.length} of {projectsData.length} Selected Works
+                    </span>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    <button
+                        onClick={() => setShowAllInline(!showAllInline)}
+                        style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.12)',
+                            color: '#ffffff',
+                            padding: '0.65rem 1.25rem',
+                            borderRadius: '100px',
+                            fontSize: '0.8rem',
+                            fontWeight: 500,
+                            fontFamily: "'Inter', sans-serif",
+                            cursor: 'pointer',
+                            transition: 'all 0.2s'
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)')}
+                    >
+                        {showAllInline ? 'Show Top 3 Only' : 'Expand All Inline'}
+                    </button>
+
+                    <button
+                        onClick={() => setIsWindowOpen(true)}
+                        style={{
+                            background: '#ffffff',
+                            border: 'none',
+                            color: '#000000',
+                            padding: '0.65rem 1.4rem',
+                            borderRadius: '100px',
+                            fontSize: '0.8rem',
+                            fontWeight: 600,
+                            fontFamily: "'Inter', sans-serif",
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            boxShadow: '0 4px 20px rgba(255, 255, 255, 0.15)',
+                            transition: 'transform 0.2s, box-shadow 0.2s'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                            e.currentTarget.style.boxShadow = '0 6px 25px rgba(255, 255, 255, 0.25)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(255, 255, 255, 0.15)';
+                        }}
+                    >
+                        <Maximize2 size={15} />
+                        <span>Open Projects Window</span>
+                    </button>
+                </div>
+            </div>
+
+            {/* Standalone All Projects Window Modal */}
+            <ProjectsWindow
+                isOpen={isWindowOpen}
+                onClose={() => setIsWindowOpen(false)}
+                projects={projectsData}
+                onSelectProject={(project) => setSelectedProject(project)}
+            />
 
             {/* Case Study Modal */}
             <CaseStudyModal
