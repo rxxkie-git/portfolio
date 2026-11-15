@@ -116,7 +116,7 @@ const HeroProfile = () => {
                     <SocialLink icon={<Github size={20} />} href="https://github.com/rxxkie-git" />
                     <SocialLink icon={<Linkedin size={20} />} href="https://www.linkedin.com/in/srinand-nihal/" />
                     <SocialLink icon={<Twitter size={20} />} href="https://x.com/rookie_nihal" />
-                    <SocialLink icon={<Mail size={20} />} href="mailto:5420380.x.srinand@gmail.com" />
+                    <SocialLink icon={<Mail size={20} />} href="mailto:srinandrv@gmail.com" />
                     <SocialLink icon={<Instagram size={20} />} href="https://www.instagram.com/rxxkie_ig/" />
                     <SocialLink icon={<Code size={20} />} href="https://leetcode.com/u/srinandleetc/" />
                     <SocialLink icon={<FileText size={20} />} href={resumeUrl} />

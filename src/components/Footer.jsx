@@ -3,7 +3,7 @@ import { ArrowUpRight, Copy, Check } from 'lucide-react';
 import resumePdf from '../assets/resume.pdf';
 import PixelTypography from './PixelTypography';
 
-const EMAIL = '5420380.x.srinand@gmail.com';
+const EMAIL = 'srinandrv@gmail.com';
 
 const Footer = () => {
     const [copiedEmail, setCopiedEmail] = useState(false);
@@ -197,7 +197,7 @@ const Footer = () => {
                             width: 'fit-content'
                         }}
                     >
-                        <img
+                        {/* <img
                             src="/brand-symbol.png"
                             alt="Srinand Nihal Brand Symbol"
                             style={{
@@ -216,7 +216,7 @@ const Footer = () => {
                                 e.currentTarget.style.transform = 'scale(1)';
                                 e.currentTarget.style.filter = 'none';
                             }}
-                        />
+                        /> */}
                         <span
                             style={{
                                 fontSize: '1.02rem',

@@ -48,7 +48,7 @@ const About = () => {
         { name: 'GitHub', icon: <Github size={18} />, href: 'https://github.com/rxxkie-git' },
         { name: 'LinkedIn', icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/srinand-nihal/' },
         { name: 'Twitter/X', icon: <Twitter size={18} />, href: 'https://x.com/rookie_nihal' },
-        { name: 'Email', icon: <Mail size={18} />, href: 'mailto:5420380.x.srinand@gmail.com' },
+        { name: 'Email', icon: <Mail size={18} />, href: 'mailto:srinandrv@gmail.com' },
         { name: 'LeetCode', icon: <Code size={18} />, href: 'https://leetcode.com/u/srinandleetc/' },
         { name: 'Instagram', icon: <Instagram size={18} />, href: 'https://www.instagram.com/rxxkie_ig/' },
         { name: 'Resume', icon: <FileText size={18} />, href: resumeUrl }
