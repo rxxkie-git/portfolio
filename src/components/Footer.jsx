@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Copy, Check } from 'lucide-react';
 import resumePdf from '../assets/resume.pdf';
+import PixelTypography from './PixelTypography';
 
 const EMAIL = '5420380.x.srinand@gmail.com';
 
@@ -174,7 +175,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Bottom Sitemap & Metadata Grid */}
+            {/* Middle Sitemap & Metadata Grid (Preserved 3-Column Layout) */}
             <div
                 style={{
                     display: 'grid',
@@ -182,33 +183,84 @@ const Footer = () => {
                     gap: '2.5rem',
                     borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                     paddingTop: '3.5rem',
-                    paddingBottom: '3.5rem'
+                    paddingBottom: '2.5rem'
                 }}
             >
-                {/* Col 1: Identity & Time */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                {/* Col 1: Identity & Time with User's Exact Custom Brand Symbol */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                    <div
+                        className="brand-lockup-wrapper"
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.75rem',
+                            width: 'fit-content'
+                        }}
+                    >
                         <img
-                            src="/brand-logo.png"
-                            alt="Logo"
-                            style={{ width: '20px', height: '18px', objectFit: 'contain' }}
+                            src="/brand-symbol.png"
+                            alt="Srinand Nihal Brand Symbol"
+                            style={{
+                                width: '26px',
+                                height: '26px',
+                                objectFit: 'contain',
+                                borderRadius: '4px',
+                                transition: 'transform 0.25s ease, filter 0.25s ease',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.1)';
+                                e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(34, 197, 94, 0.8))';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.filter = 'none';
+                            }}
                         />
-                        <span style={{ fontSize: '0.95rem', fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: '#ffffff' }}>
+                        <span
+                            style={{
+                                fontSize: '1.02rem',
+                                fontWeight: 700,
+                                fontFamily: "'Space Grotesk', sans-serif",
+                                letterSpacing: '-0.01em',
+                                color: '#ffffff'
+                            }}
+                        >
                             SRINAND NIHAL
                         </span>
                     </div>
-                    <p style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.6, margin: 0 }}>
+
+                    <p style={{ fontSize: '0.84rem', color: 'rgba(255, 255, 255, 0.52)', lineHeight: 1.65, margin: 0, maxWidth: '280px' }}>
                         Multidisciplinary Developer & AI Engineer based in Bengaluru, India.
                     </p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem', fontSize: '0.75rem', fontFamily: "'JetBrains Mono', monospace", color: '#4ade80' }}>
-                        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e' }} />
+
+                    <div
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            marginTop: '0.3rem',
+                            fontSize: '0.75rem',
+                            fontFamily: "'JetBrains Mono', monospace",
+                            color: '#4ade80'
+                        }}
+                    >
+                        <span
+                            style={{
+                                width: '6px',
+                                height: '6px',
+                                borderRadius: '50%',
+                                background: '#22c55e',
+                                boxShadow: '0 0 8px #22c55e'
+                            }}
+                        />
                         <span>BENGALURU • {timeStr} IST</span>
                     </div>
                 </div>
 
                 {/* Col 2: Navigation */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                    <span style={{ fontSize: '0.72rem', fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255, 255, 255, 0.4)', textTransform: 'uppercase' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255, 255, 255, 0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                         NAVIGATION
                     </span>
                     {['#work:Selected Work', '#expertise:Expertise & Stack', '#certificates:Certificates', '#about:About Perspective'].map((link) => {
@@ -218,10 +270,11 @@ const Footer = () => {
                                 key={href}
                                 href={href}
                                 style={{
-                                    fontSize: '0.85rem',
+                                    fontSize: '0.86rem',
                                     color: 'rgba(255, 255, 255, 0.7)',
                                     textDecoration: 'none',
-                                    transition: 'color 0.2s'
+                                    transition: 'color 0.2s',
+                                    width: 'fit-content'
                                 }}
                                 onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
                                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
@@ -233,8 +286,8 @@ const Footer = () => {
                 </div>
 
                 {/* Col 3: Social Channels */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                    <span style={{ fontSize: '0.72rem', fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255, 255, 255, 0.4)', textTransform: 'uppercase' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontFamily: "'JetBrains Mono', monospace", color: 'rgba(255, 255, 255, 0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                         CHANNELS
                     </span>
                     {[
@@ -252,11 +305,12 @@ const Footer = () => {
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
-                                gap: '0.3rem',
-                                fontSize: '0.85rem',
+                                gap: '0.35rem',
+                                fontSize: '0.86rem',
                                 color: 'rgba(255, 255, 255, 0.7)',
                                 textDecoration: 'none',
-                                transition: 'color 0.2s'
+                                transition: 'color 0.2s',
+                                width: 'fit-content'
                             }}
                             onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
                             onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
@@ -268,10 +322,13 @@ const Footer = () => {
                 </div>
             </div>
 
+            {/* Interactive Centerpiece: Pixelated Typography with Proximity Defogging Effect */}
+            <PixelTypography />
+
             {/* Sub-footer Copyright & Recognition */}
             <div
                 style={{
-                    borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                     paddingTop: '2rem',
                     display: 'flex',
                     flexWrap: 'wrap',
